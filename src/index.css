@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: inter;
+}
+
+.no-focus-ring {
+  --tw-ring-color: transparent !important;
+}
+
+[type='checkbox']:focus {
+  @apply no-focus-ring;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 48px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #018cb9;
+  border-radius: 48px;
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Disable scrollbars on the main sidebar */
+
+/* #main-chart::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+} */
+
+.hide-scrollbar {
+  /*FireFox*/
+  scrollbar-width: none;
+  /*IE10+*/
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  /*Chrome, Safari, Edge*/
+  display: none;
+}
+
+input[type='date'] {
+  position: relative;
+  padding: 10px;
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  color: transparent;
+  background: none;
+  z-index: 1;
+}
+
+input[type='date']:before {
+  color: transparent;
+  background: none;
+  display: block;
+  content: url('../public/images/calendarIcon.svg');
+  width: 15px;
+  height: 20px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #999;
+}
